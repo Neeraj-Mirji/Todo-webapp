@@ -11,8 +11,8 @@ app.use(bodyParser.urlencoded({extended : true}));
 app.use(express.static('public'));
 app.set('view engine' , 'ejs');
 
-
-mongoose.connect('mongodb+srv://Admin:Admin@cluster0.xejft.mongodb.net/todoDb' , {useNewUrlParser: true, useUnifiedTopology: true});
+//'mongodb+srv://Admin:Admin@cluster0.xejft.mongodb.net/todoDb'
+mongoose.connect('mongodb://localhost:27017/todoDb' , {useNewUrlParser: true, useUnifiedTopology: true});
 
 
 const itemSchema = new mongoose.Schema({
@@ -144,7 +144,7 @@ if (port == null || port == "") {
 
 
 
-app.listen(port , function()
+app.listen(3000 , function()
 {
   console.log("server running at port 3000");
 })
