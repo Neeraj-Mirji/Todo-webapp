@@ -6,7 +6,7 @@
   </div>
 
   <div class="box">
-    <% if(Items.length) {%>
+    <% if(Items && Items.length) {%>
     <% Items.forEach(function(item){ %>
       <form  action="/delete" method="post">
         <div class="item">
