@@ -11,8 +11,8 @@ app.use(bodyParser.urlencoded({extended : true}));
 app.use(express.static('public'));
 app.set('view engine' , 'ejs');
 
-//'mongodb+srv://Admin:Admin@cluster0.xejft.mongodb.net/todoDb'
-mongoose.connect('mongodb://localhost:27017/todoDb' , {useNewUrlParser: true, useUnifiedTopology: true});
+//
+mongoose.connect('mongodb+srv://Admin:Admin@cluster0.xejft.mongodb.net/todoDb' , {useNewUrlParser: true, useUnifiedTopology: true});
 
 
 const itemSchema = new mongoose.Schema({
