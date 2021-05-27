@@ -11,7 +11,9 @@ app.use(bodyParser.urlencoded({extended : true}));
 app.use(express.static('public'));
 app.set('view engine' , 'ejs');
 
-//
+
+
+
 mongoose.connect('mongodb+srv://Admin:Admin@cluster0.xejft.mongodb.net/todoDb' , {useNewUrlParser: true, useUnifiedTopology: true});
 
 
@@ -59,7 +61,7 @@ app.get('/:paramName' , function(req,res)
         });
 
         list.save();
-          res.render('list' , {listTitle : list.name , Items : list.items});
+          res.render('list' , {listTitle : list.name , Items : listItem.items});
     }
     else
     {
@@ -137,14 +139,10 @@ app.get('/about' , function(req , res)
   res.render('about');
 });
 
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 3000;
-}
 
 
 
-app.listen(process.env.PORT , function()
+app.listen(3000 , function()
 {
   console.log("server running at port 3000");
 })
